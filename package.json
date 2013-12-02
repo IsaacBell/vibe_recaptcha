@@ -1,0 +1,12 @@
+{
+	"name": "vibe_recaptcha",
+	"description": "Implementation of Google's reCAPTCHA service in Vibe.d",
+	"homepage": "http://example.org",
+	"copyright": "Copyright © 2000, Your Name",
+	"authors": [
+		"Your Name"
+	],
+	"dependencies": {
+		"vibe-d": ">=0.7.18"
+	}
+}

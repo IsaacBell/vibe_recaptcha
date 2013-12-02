@@ -1,0 +1,10 @@
+extends layout
+
+block body
+	h1 Recaptcha Example
+	br
+	br
+	form(action='/verify',method='post')
+		input(type='hidden',name='referer',value='#{req.requestURL}')
+		!= recaptcha
+		input(type='submit')
