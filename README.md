@@ -18,6 +18,11 @@
 	}
 </pre>
 
+<p>Import the module in your app.d file:</p>
+<pre>
+	import recaptcha.connect;
+</pre>
+
 <h1>Displaying the CAPTCHA image</h1>
 <!-- <p>===============================</p> -->
 <p>The CAPTCHA image can be generated in two ways:</p>
@@ -65,5 +70,19 @@ void verify(HTTPServerRequest req, HTTPServerResponse res)
 	else
 		// Handle the failure response
 		res.writeBody(cast(ubyte[]) "Not quite.", "text/plain");
+}
+</pre>
+
+<h1>Test API Keys</h1>
+<!-- <p>===============================</p> -->
+<p>To check for errors during verification, call function testRecaptcha instead of verifyRecaptcha to see the response from reCAPTCHA:</p>
+<pre>
+// import vibe.core.log
+void verify(HTTPServerRequest req, HTTPServerResponse res)
+{
+	string challenge = req.form["recaptcha_challenge_field"];
+	string response = req.form["recaptcha_response_field"];
+
+	logInfo("Test Response: %s", testRecaptcha("6Lf4JusSAAAAAIgeySdOHz12KfbyWicztJvyG-Yt", req.peer, challenge, response) )
 }
 </pre>

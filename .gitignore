@@ -1,1 +1,3 @@
 vibe_recaptcha
+libvibe_recaptcha.a
+.dub/
