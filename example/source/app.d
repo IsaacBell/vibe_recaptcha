@@ -25,8 +25,8 @@ void verify(HTTPServerRequest req, HTTPServerResponse res)
 	if ( verifyRecaptcha("private key here", req.peer, challenge, response) )
 		res.redirect("/success");
 	else
+		// Return to URL submitted in form
 		res.redirect(req.form["referer"]);
-		//res.writeBody(cast(ubyte[]) "Not quite.", "text/plain");
 }
 
 shared static this()

@@ -5,6 +5,7 @@ block body
 	br
 	br
 	form(action='/verify',method='post')
+		// Send current URL, redirect back to it if reCAPTCHA is incorrect
 		input(type='hidden',name='referer',value='#{req.requestURL}')
 		!= recaptcha
 		input(type='submit')
