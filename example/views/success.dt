@@ -1,4 +1,4 @@
 extends layout
 
 block body
-	h4 Success!
+	h3 Success!

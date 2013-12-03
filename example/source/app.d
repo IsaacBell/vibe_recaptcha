@@ -4,7 +4,7 @@ import recaptcha.connect;
 
 void index(HTTPServerRequest req, HTTPServerResponse res)
 {
-	string recaptcha = recaptchaHTML("6Lf4JusSAAAAACq9Fh9zyuByPCu8jLinglJygaT3");
+	string recaptcha = recaptchaHTML("public key here");
 	res.renderCompat!("index.dt",
 		HTTPServerRequest, "req",
 		string, "recaptcha")
@@ -22,7 +22,7 @@ void verify(HTTPServerRequest req, HTTPServerResponse res)
 {
 	string challenge = req.form["recaptcha_challenge_field"];
 	string response = req.form["recaptcha_response_field"];
-	if ( verifyRecaptcha("6Lf4JusSAAAAAIgeySdOHz12KfbyWicztJvyG-Yt", req.peer, challenge, response) )
+	if ( verifyRecaptcha("private key here", req.peer, challenge, response) )
 		res.redirect("/success");
 	else
 		res.redirect(req.form["referer"]);

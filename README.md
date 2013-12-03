@@ -1,8 +1,6 @@
 <h1>Vibe reCAPTCHA</h1>
 <!-- <p>===============================</p> -->
-
 <p>Implement Google's reCaptcha service in Vibe.d.</p>
-<br>
 
 <h1>Before You Get Started</h1>
 <!-- <p>===============================</p> -->
@@ -26,7 +24,7 @@
 <h1>Displaying the CAPTCHA image</h1>
 <!-- <p>===============================</p> -->
 <p>The CAPTCHA image can be generated in two ways:</p>
-<p>1. Call function recaptchaHTML in your app.d file, then render in your view:</p>
+<p>1. Call function recaptchaHTML(string publickey) in your app.d file, then render in your view:</p>
 
 <h3>app.d</h3>
 <pre>
@@ -64,7 +62,7 @@ void verify(HTTPServerRequest req, HTTPServerResponse res)
 {
 	string challenge = req.form["recaptcha_challenge_field"];
 	string response = req.form["recaptcha_response_field"];
-	if ( verifyRecaptcha("6Lf4JusSAAAAAIgeySdOHz12KfbyWicztJvyG-Yt", req.peer, challenge, response) )
+	if ( verifyRecaptcha("private key", req.peer, challenge, response) )
 		// Handle the success response
 		res.redirect("/success");
 	else
@@ -83,6 +81,6 @@ void verify(HTTPServerRequest req, HTTPServerResponse res)
 	string challenge = req.form["recaptcha_challenge_field"];
 	string response = req.form["recaptcha_response_field"];
 
-	logInfo("Test Response: %s", testRecaptcha("6Lf4JusSAAAAAIgeySdOHz12KfbyWicztJvyG-Yt", req.peer, challenge, response) )
+	logInfo("Test Response: %s", testRecaptcha("private key", req.peer, challenge, response) )
 }
 </pre>
