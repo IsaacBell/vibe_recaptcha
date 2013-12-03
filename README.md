@@ -37,7 +37,7 @@ void index(HTTPServerRequest req, HTTPServerResponse res)
 		(req, recaptcha);
 }
 </pre>
-<p>From there, render the variable from within your view:</p>
+<p>2. From there, render the variable from within your view:</p>
 <h2>index.dt</h2>
 <pre>
 form(action='/verify',method='post')
