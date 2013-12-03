@@ -67,7 +67,7 @@ void verify(HTTPServerRequest req, HTTPServerResponse res)
 		res.redirect("/success");
 	else
 		// Handle the failure response
-		res.writeBody(cast(ubyte[]) "Not quite.", "text/plain");
+		res.writeBody(cast(ubyte[]) "Failure.", "text/plain");
 }
 </pre>
 
