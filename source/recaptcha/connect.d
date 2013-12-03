@@ -91,6 +91,8 @@ bool verifyRecaptcha(string privateKey, string ip, string challenge, string resp
 
 /**
  * Check error returned by Recaptcha
+ *
+ * Returns either "true" or an error message
  */
 string testRecaptcha(string privateKey, string ip, string challenge, string response) {
 	bool successful;

@@ -65,7 +65,7 @@ void verify(HTTPServerRequest req, HTTPServerResponse res)
 
 <h1>Test API Keys</h1>
 <!-- <p>===============================</p> -->
-<p>To check for errors during verification, call function testRecaptcha instead of verifyRecaptcha to see the response from reCAPTCHA:</p>
+<p>To check for errors during verification, call function testRecaptcha instead of verifyRecaptcha to see the response from reCAPTCHA when a response is inputted:</p>
 <pre>
 // import vibe.core.log
 void verify(HTTPServerRequest req, HTTPServerResponse res)
@@ -73,6 +73,8 @@ void verify(HTTPServerRequest req, HTTPServerResponse res)
 	string challenge = req.form["recaptcha_challenge_field"];
 	string response = req.form["recaptcha_response_field"];
 
-	logInfo("Test Response: %s", testRecaptcha("private key", req.peer, challenge, response) )
+	// Returns either "true" or an error message
+	string recaptchaMessage = testRecaptcha("private key", req.peer, challenge, response);
+	logInfo("Recaptcha's Response: %s", recaptchaMessage);
 }
 </pre>
