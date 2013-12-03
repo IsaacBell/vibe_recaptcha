@@ -23,10 +23,10 @@
 
 <h1>Displaying the CAPTCHA image</h1>
 <!-- <p>===============================</p> -->
-<p>The CAPTCHA image can be generated in two ways:</p>
-<p>1. Call function recaptchaHTML(string publickey) in your app.d file, then render in your view:</p>
+<p>The CAPTCHA image is generated in two steps</p>
+<p>1. Call function recaptchaHTML(string publickey) in your app.d file, and make it visible to your view:</p>
 
-<h3>app.d</h3>
+<h2>app.d</h2>
 <pre>
 void index(HTTPServerRequest req, HTTPServerResponse res)
 {
@@ -37,20 +37,12 @@ void index(HTTPServerRequest req, HTTPServerResponse res)
 		(req, recaptcha);
 }
 </pre>
-<h3>index.dt</h3>
+<p>From there, render the variable from within your view:</p>
+<h2>index.dt</h2>
 <pre>
 form(action='/verify',method='post')
 	// Your form fields here
 	!= recaptcha
-	input(type='submit')
-</pre>
-
-<p>2. Or, you can call the function directly within your view:</p>
-<h3>index.dt</h3>
-<pre>
-form(action='/verify',method='post')
-	// Your form fields here
-	!= recaptchaHTML("your public key")
 	input(type='submit')
 </pre>
 
