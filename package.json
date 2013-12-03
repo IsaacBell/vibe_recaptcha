@@ -2,7 +2,8 @@
 	"name": "vibe_recaptcha",
 	"description": "Implementation of Google's reCAPTCHA service in Vibe.d",
 	"homepage": "http://example.org",
-	"copyright": "Copyright © 2000, Your Name",
+	"license": "BSL-1.0",
+	"copyright": "Copyright © 2013, Isaac Bell",
 	"authors": [
 		"Isaac Bell"
 	],

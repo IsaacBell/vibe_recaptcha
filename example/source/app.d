@@ -22,15 +22,11 @@ void verify(HTTPServerRequest req, HTTPServerResponse res)
 {
 	string challenge = req.form["recaptcha_challenge_field"];
 	string response = req.form["recaptcha_response_field"];
-	if ( verifyRecaptcha("6Lf4JusSAAAAAIgeySdOHz12KfbyWicztJvyG-Yt", req.peer, challenge, response) == "true" )
+	if ( verifyRecaptcha("6Lf4JusSAAAAAIgeySdOHz12KfbyWicztJvyG-Yt", req.peer, challenge, response) )
 		res.redirect("/success");
 	else
-		//res.redirect(req.form["referer"]);
-		res.writeBody(cast(ubyte[]) "Not quite.", "text/plain");
-	logInfo("Challenge: %s", req.form["recaptcha_challenge_field"]);
-	//logInfo("Response: %s", req.form["recaptcha_response_field"]);
-	//logInfo("IP: %s", req.peer);
-	logInfo("Recaptcha Response: %s", verifyRecaptcha("6LeeAuYSAAAAAKDVlne-rXCFPNdLh4GWN-GKBSYg", req.peer, challenge, response));
+		res.redirect(req.form["referer"]);
+		//res.writeBody(cast(ubyte[]) "Not quite.", "text/plain");
 }
 
 shared static this()

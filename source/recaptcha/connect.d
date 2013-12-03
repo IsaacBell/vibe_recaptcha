@@ -46,7 +46,7 @@ string recaptchaHTML(string publicKey, bool useSSL = false){
 /**
  * Check whether the answers entered by the users are correct
  */
-string verifyRecaptcha(string privateKey, string ip, string challenge, string response, bool test = false) {
+bool verifyRecaptcha(string privateKey, string ip, string challenge, string response) {
 	bool successful;
 	string[] apiResponse;
 	string error;
