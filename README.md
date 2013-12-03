@@ -11,7 +11,7 @@
 <p>To install, add vibe_recaptcha to your package.json file:</p>
 <pre>
 	"dependencies": {
-		"vibe_d":">=0.7.18",
+		"vibe-d":">=0.7.18",
 		"vibe_recaptcha":"~master"
 	}
 </pre>
