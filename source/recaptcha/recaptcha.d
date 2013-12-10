@@ -1,4 +1,4 @@
-module recaptcha.connect;
+module recaptcha;
 
 import std.utf;
 import std.string;

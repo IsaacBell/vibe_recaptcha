@@ -1,6 +1,6 @@
 import std.string;
 import vibe.d;
-import recaptcha.connect;
+import recaptcha;
 
 void index(HTTPServerRequest req, HTTPServerResponse res)
 {

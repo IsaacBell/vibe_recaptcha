@@ -12,13 +12,13 @@
 <pre>
 	"dependencies": {
 		"vibe-d":">=0.7.18",
-		"vibe_recaptcha":"~master"
+		"vibe_recaptcha":">=1.0"
 	}
 </pre>
 
 <p>Import the module in your app.d file:</p>
 <pre>
-	import recaptcha.connect;
+	import recaptcha;
 </pre>
 
 <h1>Displaying the CAPTCHA image</h1>
