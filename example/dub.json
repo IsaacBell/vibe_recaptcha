@@ -1,0 +1,14 @@
+{
+	"name": "example",
+	"description": "Example using the reCAPTCHA service",
+	"homepage": "https://github.com/IsaacBell/vibe_recaptcha",
+	"copyright": "Copyright © 2013, Isaac Bell",
+	"authors": [
+		"Isaac Bell"
+	],
+	"dependencies": {
+		"vibe-d":">=0.7.18",
+		"vibe_recaptcha": { "version": "~master", "path": ".." }
+	},
+	"versions": ["VibeDefaultMain"]
+}
